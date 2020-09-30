@@ -1,0 +1,4 @@
+org.springframework.context.ApplicationListener=\
+com.kedacom.xlite.sys.core.listener.ConstantsInitListener,\
+com.kedacom.xlite.sys.core.listener.TimerTaskRunListener,\
+com.kedacom.xlite.sys.core.listener.RemoveRequestParamListener

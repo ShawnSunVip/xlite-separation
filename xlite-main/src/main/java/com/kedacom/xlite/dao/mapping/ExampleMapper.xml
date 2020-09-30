@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kedacom.xlite.dao.ExampleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="AbModelResultMap" type="com.kedacom.xlite.modular.model.AbModel">
+        <id column="testId" property="test_id" />
+        <result column="testName" property="test_name" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+		test_id, test_name
+	</sql>
+
+    <sql id="select_sql">
+        <if test="testId != null and testId!=0">
+            and test_id = #{testId}
+        </if>
+        <if test="testName != null and testName != ''">
+            and test_name like CONCAT('%',#{testName},'%')
+        </if>
+    </sql>
+
+    <select id="find" resultMap="AbModelResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ab
+            where 1=1
+        <include refid="select_sql" />
+    </select>
+
+    <delete id="delete" parameterType="String">
+		delete from ab where test_id in (#{ids})
+	</delete>
+
+    <update id="update" parameterType="com.kedacom.xlite.modular.model.AbModel">
+        UPDATE ab
+        <set>
+            <if test="testName!=null">
+               test_name=#{testName}
+            </if>
+        </set>
+        WHERE test_id =#{testId}
+    </update>
+</mapper>
