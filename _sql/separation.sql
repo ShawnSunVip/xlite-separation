@@ -776,7 +776,7 @@ CREATE TABLE `sys_timers`  (
 -- ----------------------------
 -- Records of sys_timers
 -- ----------------------------
-INSERT INTO `sys_timers` VALUES (1277952546828189698, '定时同步缓存常量', 'com.kedacom.xlite.sys.modular.timer.tasks.RefreshConstantsTaskRunnerr', '0 0/1 * * * ?', 1, '定时同步sys_config表的数据到缓存常量中', '2020-7-30 16:53:13', 1265476890672672808, '2020-7-30 16:53:18', 1265476890672672808);
+INSERT INTO `sys_timers` VALUES (1277952546828189698, '定时同步缓存常量', 'com.kedacom.xlite.sys.modular.timer.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', 1, '定时同步sys_config表的数据到缓存常量中', '2020-7-30 16:53:13', 1265476890672672808, '2020-7-30 16:53:18', 1265476890672672808);
 
 -- ----------------------------
 -- Table structure for sys_user
